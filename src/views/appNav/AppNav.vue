@@ -1,22 +1,25 @@
 <template>
   <div class="nav-wrapper">
     <Menu style="height:100%">
-      <Submenu :name="sub1.value" v-for="sub1 in meuns" :key="sub1.value">
-        <template slot="title" v-if="sub1.icon">
-          <Icon :type="sub1.icon" />
-          {{sub1.title}}
-        </template>
-        <template slot="title" v-else>
-          <MenuItem :name="sub1.value" :to="sub1.path">{{sub1.title}}</MenuItem>
-        </template>
-        <!-- <template v-if="sub1.title='首页'">
-          <MenuItem :name="sub1.value" :to="sub1.path">{{sub1.title}}</MenuItem>
-        </template> -->
-        <template v-if="sub1.children">
-          <MenuItem :name="sub2.value" :to="sub2.path" v-for="sub2 in sub1.children" :key="sub2.value">{{sub2.title}}</MenuItem>
-        </template>
-       
-      </Submenu>
+      <template v-for="sub1 in meuns">
+        <Submenu :name="sub1.value" :key="sub1.value" v-if="sub1.children">
+          <template slot="title" v-if="sub1.icon">
+            <Icon :type="sub1.icon" />
+            {{sub1.title}}
+          </template>
+          <template slot="title" v-else>
+            <MenuItem :name="sub1.value" :to="sub1.path">{{sub1.title}}</MenuItem>
+          </template>
+          <!-- <template v-if="sub1.title='首页'">
+            <MenuItem :name="sub1.value" :to="sub1.path">{{sub1.title}}</MenuItem>
+          </template> -->
+          <template v-if="sub1.children">
+            <MenuItem :name="sub2.value" :to="sub2.path" v-for="sub2 in sub1.children" :key="sub2.value">{{sub2.title}}</MenuItem>
+          </template>
+        </Submenu>
+        <MenuItem v-else :name="sub1.value" :to="sub1.path" :key="sub1.value">{{sub1.title}}</MenuItem>
+      </template>
+
       <!-- <Submenu name="1">
           <MenuItem name="1-2">评论管理</MenuItem>
           <MenuItem name="1-3">举报管理</MenuItem>
