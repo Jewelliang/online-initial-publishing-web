@@ -3,14 +3,7 @@ export const navConfig = [
     title: '首页',
     path: '/home',
     value: 'home',
-    icon: 'md-home',
-    children: [
-      {
-        title: '首页',
-        path: '/home',
-        value: 'home-page'
-      }
-    ]
+    icon: 'md-home'
   },
   {
     title: '用户管理',
