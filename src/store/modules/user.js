@@ -36,6 +36,23 @@ const user = {
       })
     },
 
+    //编辑用户信息
+    updateUserById ({ commit }, userInfo) {
+      // const username = userInfo.username
+      // const truename = userInfo.truename
+      // const position = userInfo.position
+      // const publicationName = userInfo.publicationName
+      // const role = userInfo.role
+      // const editorialBoard = userInfo.editorialBoard
+      return new Promise((resolve, reject) => {
+        updateUserById(userInfo).then(response => {
+          commit(userInfo)
+          resolve(response)
+        }).catch(error => {
+          reject(error)
+        })
+      })
+    },
   }
 }
 export default user

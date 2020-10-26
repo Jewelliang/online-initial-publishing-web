@@ -35,6 +35,16 @@ const routes = [
         component: () => import('../views/user/index.vue')
       },
       {
+        path: 'addUser',
+        name: 'list',
+        component: () => import('../views/user/addUser.vue')
+      },
+      {
+        path: 'updateUser',
+        name: 'list',
+        component: () => import('../views/user/updateUser.vue')
+      },
+      {
         path: 'auth',
         name: 'auth',
         component: () => import('../views/user/auth.vue')

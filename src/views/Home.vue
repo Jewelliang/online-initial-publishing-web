@@ -76,7 +76,7 @@ export default {
     }
 
     .left-panel {
-      width: 346px;
+      width: 260px;
       height: calc(100vh - 68px);
       left: 0;
       top: 68px;
@@ -106,7 +106,7 @@ export default {
     .content {
       position: absolute;
       top: 68px;
-      left: 346px;
+      left: 260px;
       width: calc(100vw - 346px);
       height: calc(100vh - 68px);
       z-index: 60;

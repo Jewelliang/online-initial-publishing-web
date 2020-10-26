@@ -14,3 +14,10 @@ export function getAllUserInfo () { // 获取用户信息接口
 export function getRoleAuthInfo () { // 获取角色权限接口
   return request('/user/getRoleAuthList', 'get')
 }
+
+
+export function updateUserById (userInfo) { // 更新用户信息接口
+  return request('/user/updateUserById', 'POST', {
+    userInfo
+  })
+}
